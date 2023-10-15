@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectFilter } from 'redux/selectors';
 import { selectIsLoading, selectErrors } from 'redux/selectors';
 import { filteredContacts } from 'redux/filtersSlice';
-// import { useFetchContactsQuery } from 'redux/contactsServiceApi';
 
 import Loader from '../Loader';
 import { Wrapper, Label, Input } from './Filter.styled';
@@ -14,7 +13,6 @@ const Filter = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectErrors);
 
-  // const { isFetching: isLoading, error } = useFetchContactsQuery();
 
   const onChangeFilter = ({ target: { value } }) => {
     dispatch(filteredContacts(value.toLowerCase()));

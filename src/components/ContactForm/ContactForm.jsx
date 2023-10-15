@@ -5,18 +5,11 @@ import { addContact } from 'redux/operations';
 import { selectContacts } from 'redux/selectors';
 import { Form, Label, Input, Button } from './ContactForm.styled';
 
-// import {
-//   useAddContactMutation,
-//   useFetchContactsQuery,
-// } from 'redux/contactsServiceApi';
-// import Loader from '../Loader';
+
 
 const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
-
-  // const [addContact, { isLoading: additionContact }] = useAddContactMutation();
-  // const { data: contacts } = useFetchContactsQuery();
 
   const onFormSubmit = e => {
     e.preventDefault();
@@ -30,7 +23,6 @@ const ContactForm = () => {
     }
 
     dispatch(addContact({ name: name.value, phone: phone.value }));
-    // addContact({ name: name.value, phone: phone.value });
 
     e.currentTarget.reset(name.value, phone.value);
   };
@@ -69,7 +61,7 @@ const ContactForm = () => {
 
       <Button type="submit">
         Add contact
-        {/* {additionContact && <Loader width={'20'} />} */}
+        {}
       </Button>
     </Form>
   );
